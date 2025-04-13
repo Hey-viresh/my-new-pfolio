@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadata and Links -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viresh Kumar - Portfolio</title>
+  
+  <!-- Google Fonts (Poppins) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons for icons usage -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Internal CSS Styles -->
+  <style>
+    /* Global Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a); /* Background gradient */
+      color: #ffffff; /* White text color */
+      font-family: 'Poppins', sans-serif; /* Font style */
+      scroll-behavior: smooth; /* Smooth scroll */
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      background: linear-gradient(90deg, #00ff99, #00d9ff); /* Gradient header */
+      color: #000; /* Black text color */
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: #222;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    /* Navigation links hover and active states */
+    nav a.active, nav a:hover {
+      color: #fff;
+    }
+
+    /* Introduction Section */
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      text-align: center;
+      background: linear-gradient(135deg, #1c1c1c, #111111); /* Gradient background */
+      animation: fadeIn 2s ease; /* Fade-in animation */
+    }
+
+    .intro h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #00ff99, #00d9ff);
+      -webkit-background-clip: text;
+      color: transparent; /* Text gradient effect */
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      color: #00ffcc; /* Highlight color */
+    }
+
+    .intro p {
+      margin: 1rem 0;
+      max-width: 500px;
+      color: #bbb; /* Light gray text */
+    }
+
+    /* Button Styles */
+    .buttons {
+      margin-top: 2rem;
+    }
+
+    .buttons a {
+      margin: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      border: 2px solid transparent;
+      background: linear-gradient(45deg, #00ff99, #00d9ff);
+      color: #000;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: all 0.4s ease;
+      display: inline-block;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+    }
+
+    .buttons a:hover {
+      background: #fff;
+      color: #00d9ff;
+      border-color: #00d9ff;
+      box-shadow: 0 0 25px rgba(0, 255, 153, 1);
+    }
+
+    /* Stats Section */
+    .stats {
+      display: flex;
+      justify-content: center;
+      margin: 4rem 0;
+      text-align: center;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, #121212, #1d1d1d);
+      padding: 2rem 0;
+    }
+
+    .stat {
+      margin: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1rem;
+      border-radius: 10px;
+      background: #1f1f1f;
+    }
+
+    /* Hover effect for stats */
+    .stat:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00d9ff88;
+    }
+
+    .stat h3 {
+      color: #00d9ff;
+      font-size: 2rem;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    .stat p {
+      color: #bbb;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background: #111;
+      color: #666;
+    }
+
+    /* Profile Picture */
+    img.profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #00ff99;
+      margin-top: 2rem;
+      animation: fadeIn 2s ease, glow 1.5s ease-in-out infinite alternate;
+      box-shadow: 0 0 20px #00ff9988;
+    }
+
+    /* Section Titles */
+    h2.section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, #00ff99, #00d9ff);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    /* Lists */
+    ul.skills-list, ul.achievements-list, ul.projects-list {
+      list-style: none;
+      text-align: center;
+      color: #aaa;
+    }
+    footer {
+    background: #111;
+    color: #bbb;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  footer .contact-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  footer .contact-footer ul li {
+    display: inline-block;
+    margin: 0.5rem 1rem;
+  }
+
+  footer .contact-footer ul li a {
+    color: #bbb;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  footer .contact-footer ul li a:hover {
+    color: #00ff99;
+  }
+
+  footer p {
+    margin-top: 1rem;
+    color: #888;
+  }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px rgba(0, 255, 153, 0.5), 0 0 20px rgba(0, 255, 153, 0.5); }
+      100% { text-shadow: 0 0 20px rgba(0, 255, 153, 1), 0 0 30px rgba(0, 255, 153, 1); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .intro h1 { font-size: 2rem; }
+      .intro h2 { font-size: 1.5rem; }
+      .stat { margin: 1rem; }
+      header { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section with Logo and Navigation -->
+  <header>
+    <div class="logo"><h2><i class="fas fa-laptop-code"></i> Viresh.</h2></div>
+    <nav>
+      <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
+      <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+      <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+      <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+      <a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a>
+      <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+
+  <!-- Introduction Section -->
+  <section class="intro" id="home">
+    <img src="WEB.jpg" alt="Profile Picture" class="profile-pic">
+    <h1>Hello, I'm <span style="color:#00ff99">Viresh Kumar</span></h1>
+    <p>Computer Science Engineering student skilled in HTML & CSS, passionate about creating visually appealing and functional websites.</p>
+    <div class="buttons">
+      <a href="mailto:techieviresh2006@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://www.linkedin.com/in/viresh-kumar-602a49298/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/Hey-viresh"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://hey-viresh.github.io/my-portfolio/"><i class="fas fa-globe"></i> Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stat">
+      <h3><i class="fas fa-user-graduate"></i> Fresher</h3>
+      <p>Ready to learn and grow</p>
+    </div>
+    <div class="stat">
+      <h3><i class="fas fa-calendar-alt"></i> 2027</h3>
+      <p>Graduation Year</p>
+    </div>
+    <div class="stat">
+      <h3><i class="fas fa-laptop"></i> Responsive Design</h3>
+      <p>Certified by FreeCodeCamp</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+<section id="skills">
+  <h2 class="section-title"><i class="fas fa-tools"></i> Skills</h2>
+  <ul class="skills-list">
+      <li><i class="fab fa-html5"></i> HTML</li>
+      <li><i class="fab fa-css3-alt"></i> CSS</li>
+      <li><i class="fas fa-code"></i> JavaScript</li>
+      <li><i class="fas fa-smile"></i> Vibe Coding</li>
+      <li><i class="fas fa-comments"></i> Communication</li>
+      <li><i class="fas fa-users"></i> Teamwork</li>
+      <li><i class="fas fa-lightbulb"></i> Problem-solving</li>
+  </ul>
+</section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+    <p style="text-align:center; color:#aaa;">Bachelor of Technology in Computer Science Engineering<br>Adhunik Group of Institution, AKTU Lucknow<br>Expected Graduation: 2027</p>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+    <p style="text-align:center; color:#aaa;">Responsive Web Design Certification<br>FreeCodeCamp</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
+    <ul class="projects-list">
+      <li>Personal Portfolio Website - Designed and developed a responsive personal portfolio website using HTML and CSS.</li>
+      <li>Landing Page Project - Created an attractive landing page for a fictional product as part of the FreeCodeCamp curriculum.</li>
+      <li>Tribute Page - Built a tribute page dedicated to a historical figure, focusing on layout and responsive design.</li>
+    </ul>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements">
+    <h2 class="section-title"><i class="fas fa-trophy"></i> Achievements</h2>
+    <ul class="achievements-list">
+      <li>Completed 300+ hours of responsive web design coursework.</li>
+      <li>Built and deployed multiple personal web projects.</li>
+      <li>Consistently ranked among top performers in academic assessments.</li>
+    </ul>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" style="text-align:center;">
+    <h2 class="section-title"><i class="fas fa-file-alt"></i> Resume</h2>
+    <div class="buttons">
+      <!-- View Resume Button -->
+      <a href="your-resume-file.pdf" target="_blank" style="color:#00ff99; text-decoration:none; padding: 0.8rem 1.5rem; border: 2px solid #00ff99; border-radius: 30px; transition: 0.3s; display: inline-block;">
+        <i class="fas fa-eye"></i> View Resume
+      </a>
+  
+      <!-- Download Resume Button -->
+      <a href="your-resume-file.pdf" download style="color:#00ff99; text-decoration:none; padding: 0.8rem 1.5rem; border: 2px solid #00ff99; border-radius: 30px; transition: 0.3s; display: inline-block; margin-left: 1rem;">
+        <i class="fas fa-download"></i> Download Resume
+      </a>
+    </div>
+  </section>
+  
+
+  <!-- Contact Section -->
+  <section id="contact" style="text-align:center;">
+    <h2 class="section-title"><i class="fas fa-envelope"></i> Contact</h2>
+    <p style="color:#aaa;">Feel free to reach out to me at <a href="mailto:techieviresh2006@gmail.com" style="color:#00ff99; text-decoration:none;">techieviresh2006@gmail.com</a></p>
+  </section>
+  <!-- Footer with Contact Information -->
+<footer>
+  <div class="contact-footer">
+   
+    <ul>
+      <li><a href="mailto:techieviresh2006@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+      <li><a href="https://www.linkedin.com/in/viresh-kumar-602a49298/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+      <li><a href="https://github.com/Hey-viresh" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+      <li><a href="https://hey-viresh.github.io/my-portfolio/" target="_blank"><i class="fas fa-globe"></i> Portfolio</a></li>
+    </ul>
+    
+    <p>&copy; 2025 Viresh Kumar. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
